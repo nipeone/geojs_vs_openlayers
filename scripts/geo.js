@@ -1,3 +1,5 @@
+import geo from "geojs"
+
 import { renderer, getData } from './common.js'
 
 var map = geo.map({
