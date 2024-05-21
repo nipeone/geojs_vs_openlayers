@@ -17,8 +17,8 @@ var osmLayer = new ol.layer.Tile({
   source: new ol.source.OSM()
 });
 var featureLayer = new ol.layer.VectorImage({
-  renderMode: 'image',
   style: styles,
+  renderBuffer: 90000,
   source: new ol.source.Vector({
     features: (new ol.format.GeoJSON()).readFeatures(await getData(), { dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857' })
   }),
