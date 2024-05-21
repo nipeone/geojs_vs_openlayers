@@ -1,6 +1,6 @@
 
-// var OLFeatures =  (new ol.format.GeoJSON()).readFeatures(features, { dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857' });
-import { renderer, geojson_path} from './common.js'
+import { renderer, geojsonPath, getData } from './common.js'
+
 var styles = [
   new ol.style.Style({
     stroke: new ol.style.Stroke({
@@ -16,22 +16,22 @@ var styles = [
 var osmLayer = new ol.layer.Tile({
   source: new ol.source.OSM()
 });
-// var featureLayer = new ol.layer.VectorImage({
-//   renderMode: 'image',
-//   style: styles,
-//   source: new ol.source.Vector({
-//     features: OLFeatures
-//   }),
-// });
-
 var featureLayer = new ol.layer.VectorImage({
   renderMode: 'image',
   style: styles,
   source: new ol.source.Vector({
-    format: new ol.format.GeoJSON(),
-    url: geojson_path,
+    features: (new ol.format.GeoJSON()).readFeatures(await getData(), { dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857' })
   }),
 });
+
+// var featureLayer = new ol.layer.VectorImage({
+//   renderMode: 'image',
+//   style: styles,
+//   source: new ol.source.Vector({
+//     format: new ol.format.GeoJSON(),
+//     url: geojsonPath,
+//   }),
+// });
 
 // Use the "webgl" renderer by default.
 var map = new ol.Map({
