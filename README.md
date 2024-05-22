@@ -1,4 +1,8 @@
-# Introduction
+# Geo visualization library compares.
+
+  Openlayers vs GeoJS vs ...
+
+## Introduction
 
 1. use vscode open this folder.
 
@@ -6,13 +10,19 @@
 
     `# python ./generate_features.py`
 
-3. open `index.html` in preview mode
+3. install dependencies
 
-4. screenshots
+    `# npm install`
+
+4. start to run
+
+    `# npm run start`
+
+5. screenshots
 ![index.html](images/index.jpg)
 ![ol.html](images/ol.jpg)
 ![geo.html](images/geo.jpg)
 
-# Conclusion
+## Conclusion
 
     geojs performs a bit better than openlayers
