@@ -9,6 +9,7 @@ import { Style, Stroke, Fill } from 'ol/style.js';
 import Layer from 'ol/layer/Layer.js';
 import TileLayer from 'ol/layer/WebGLTile.js';
 import WebGLVectorLayerRenderer from 'ol/renderer/webgl/VectorLayer.js';
+import {defaults as defaultControls} from 'ol/control.js';
 
 import { geojsonPath, getData } from './common.js'
 
@@ -61,6 +62,7 @@ var map = new Map({
     featureLayer
   ],
   target: document.getElementById('map'),
+  controls: defaultControls({attribution: false, zoom: false, rotate: false}),
   view: new View({
     // center: transform([105.77, 35.84], 'EPSG:4326', 'EPSG:3857'),
     center: fromLonLat([105.77, 35.84]),

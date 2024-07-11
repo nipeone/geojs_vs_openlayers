@@ -6,7 +6,7 @@
 
 1. use vscode open this folder.
 
-2. generate 90000 features, after exec following command, there will generate data file `data/features.json`, maybe you should install `numpy` first.
+2. generate 90000 features, after exec following command, there will generate data file `data/features.json`.
 
     `# python ./generate_features.py`
 
