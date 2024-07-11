@@ -49,7 +49,7 @@ const deck = new Deck({
     zoom: 8,
     bearing: 0,
   },
-  controller: {scrollZoom: {smooth: true}},
+  controller: {scrollZoom: {speed: 0.1, smooth: true}},
   layers: [
     tileLayer,
     featureLayer
