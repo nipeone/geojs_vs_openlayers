@@ -13,7 +13,6 @@
     },
     "scripts": {
         "start": "vite",
-        "build": "vite build",
-        "config": "vite --config"
+        "build": "vite build"
     }
 }
