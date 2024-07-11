@@ -24,9 +24,6 @@
 ![htmls/geojs.html](images/geojs.gif)
 ![htmls/deckgl.html](images/deckgl.gif)
 
-6. capture
-
-
 ## Conclusion
 
     ...
