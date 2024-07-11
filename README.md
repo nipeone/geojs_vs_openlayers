@@ -20,8 +20,11 @@
 
 5. screenshots
 ![index.html](images/index.jpg)
+openlayers
 ![htmls/ol.html](images/ol.gif)
+geojs
 ![htmls/geojs.html](images/geojs.gif)
+deck.gl
 ![htmls/deckgl.html](images/deckgl.gif)
 
 ## Conclusion
