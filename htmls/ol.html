@@ -5,14 +5,21 @@
     <!-- <script src="../pkgs/ol-v9.2.2/ol.js"></script> -->
     <link rel="stylesheet" href="../pkgs/ol-v9.2.2/ol.css" >
     <title >Openlayers</title >
+    <style type="text/css">
+        #map {
+            height:calc(100vh - 46px);
+            width: 100%;
+        }
+    </style>
 </head >
 <body >
-    <div style="height: 20px;">
+    <div style="height: 30px;">
         <a href="../index.html" alt="index">index</a>
-        <a href="./geo.html" alt="geojs">geojs</a>
+        <span>openlayers</span>
+        <a href="./geojs.html" alt="geojs">geojs</a>
+        <a href="./deckgl.html" alt="deck.gl">deck.gl</a>
     </div>
-    <div id="map" class="map" style="height:calc(100vh - 40px);width:100%;position: relative;"></div>
-    <div id="info"></div>
+    <div id="map" class="map"></div>
 
     <script type="module" src="../scripts/ol.js"></script>
 </body >

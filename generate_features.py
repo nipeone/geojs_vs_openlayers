@@ -9,8 +9,8 @@ step=0.005
 id=1
 
 fc = FeatureCollection()
-for i in range(300):
-    for j in range(300):
+for i in range(600):
+    for j in range(600):
         x_step, y_step =i*step, j*step
         coords = [
                 [
@@ -27,7 +27,6 @@ for i in range(300):
         fc.features.append(feature)
         id+=1
 
-if not os.path.exists("data"):
-    os.makedirs("data")
+os.makedirs("data", exist_ok=True)
 with open("data/features.json", 'w') as f:
     json.dump(fc.to_dict(), f, indent=4)

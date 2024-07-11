@@ -7,11 +7,10 @@ import GeoJSON from 'ol/format/GeoJSON.js';
 import { transform, fromLonLat } from 'ol/proj.js'
 import { Style, Stroke, Fill } from 'ol/style.js';
 import Layer from 'ol/layer/Layer.js';
-// import TileLayer from 'ol/layer/Tile.js'
 import TileLayer from 'ol/layer/WebGLTile.js';
 import WebGLVectorLayerRenderer from 'ol/renderer/webgl/VectorLayer.js';
 
-import { renderer, geojsonPath, getData } from './common.js'
+import { geojsonPath, getData } from './common.js'
 
 // const style = new Style({
 //     stroke: new Stroke({

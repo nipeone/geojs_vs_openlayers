@@ -20,9 +20,10 @@
 
 5. screenshots
 ![index.html](images/index.jpg)
-![ol.html](images/ol.jpg)
-![geo.html](images/geo.jpg)
+![htmls/ol.html](images/ol.jpg)
+![htmls/geojs.html](images/geojs.jpg)
+![htmls/deckgl.html](images/deckgl.jpg)
 
 ## Conclusion
 
-    geojs performs a bit better than openlayers
+    ...

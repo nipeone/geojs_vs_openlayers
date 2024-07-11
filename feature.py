@@ -4,7 +4,6 @@ import json
 import os
 from shapely.geometry import Polygon
 
-
 class CustomJsonDecoder(json.JSONDecoder):
     # def __init__(self):
     #     json.JSONDecoder.__init__(self, object_hook=self.dict_object_hook)
@@ -38,7 +37,6 @@ class Geometry:
             return min_x, min_y, max_x - min_x, max_y - min_y
         else:
             return min_x, min_y, max_x, max_y
-    
 
 class Classification:
     def __init__(self, name=None, color:list=None):
@@ -52,8 +50,6 @@ class Classification:
         if self.color:
             d.update({"color":self.color})
         return d
-    
-    
 
 class Properties:
     def __init__(self, classification:Classification=None, isLocked:bool=None, object_type:str=None, id:int=None):
@@ -96,7 +92,7 @@ class Feature:
             self.properties = Properties(**properties)
         else:
             self.properties = properties
-        
+
     def to_dict(self):
         d = {}
         if self.type:
@@ -108,7 +104,7 @@ class Feature:
         if self.id:
             d.update({"id": self.id})
         return d
-    
+
 class FeatureCollection:
     def __init__(self, features:List[Feature]=[], type:str='FeatureCollection'):
         self.type = type
@@ -117,19 +113,19 @@ class FeatureCollection:
 
     def to_dict(self):
         return {"type":self.type, "features":[_.to_dict() for _ in self.features]}
-    
+
     @classmethod
     def from_dict(cls, d):
         return cls(features=d["features"], type=d["type"])
-    
+
     def __len__(self):
         return len(self.features)
-    
+
     def __getitem__(self, idx:int)->Feature:
         if idx >= len(self.features):
             raise IndexError("features index out of range")
         return self.features[idx]
-    
+
     def __iter__(self):
         return self
 
@@ -140,7 +136,6 @@ class FeatureCollection:
         item = self.features[self._index]
         self._index += 1
         return item
-            
 
     @classmethod
     def load(cls, anno_path:str):
@@ -150,9 +145,8 @@ class FeatureCollection:
                 return cls(**anno_dict)
         else:
             return None
-    
+
     def save(self, anno_path:str):
         with open(anno_path, 'w', encoding='utf-8') as f:
             anno_dict = self.to_dict()
             json.dump(anno_dict, f, indent=4, ensure_ascii=False)
-
