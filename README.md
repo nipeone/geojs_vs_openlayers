@@ -20,9 +20,12 @@
 
 5. screenshots
 ![index.html](images/index.jpg)
-![htmls/ol.html](images/ol.jpg)
-![htmls/geojs.html](images/geojs.jpg)
-![htmls/deckgl.html](images/deckgl.jpg)
+![htmls/ol.html](images/ol.gif)
+![htmls/geojs.html](images/geojs.gif)
+![htmls/deckgl.html](images/deckgl.gif)
+
+6. capture
+
 
 ## Conclusion
 
