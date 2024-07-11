@@ -1,12 +1,12 @@
 # Geo visualization library compares.
 
-  Openlayers vs GeoJS vs ...
+  Openlayers vs GeoJS vs Deck.gl ...
 
 ## Introduction
 
 1. use vscode open this folder.
 
-2. generate 90000 features, after exec following command, there will generate data file `data/features.json`
+2. generate 90000 features, after exec following command, there will generate data file `data/features.json`, maybe you should install `numpy` first.
 
     `# python ./generate_features.py`
 
