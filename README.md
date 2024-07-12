@@ -29,4 +29,8 @@ deck.gl
 
 ## Conclusion
 
-    ...
+    When the number of features is 90k, there is not much difference between the fps of openlayers, geojs and deckgl, but the memory usage of openlayers is the biggest.
+    
+    when the number of features is 360k, openlayers cannot be displayed, and the fps and memory usage of geojs and deckgl are about the same, fps is around 25.
+
+    When the number of features is 640k, the fps of geojs and deckgl drops to around 15.

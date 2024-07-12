@@ -3,37 +3,37 @@ import json
 import math
 from feature import FeatureCollection, Feature, Properties, Geometry
 
-num_features = 90000
-c = int(math.sqrt(num_features))
-# left top latitude(y_min) and longitude(x_min)
-x_min=105.
-y_min=35
+num_features = 360000
+n = int(math.sqrt(num_features))
+lt_x=105. #lt longitude
+lt_y=35. #lt latitude
 step=0.005
 id=1
 
-def get_feature(i, j):
-    x_step, y_step =i*step, j*step
+def get_feature(c, r):
+    x_step, y_step = c*step, r*step
     coords = [
             [
-                [x_min+x_step, y_min+y_step],
-                [x_min+x_step, y_min+y_step+step],
-                [x_min+x_step+step, y_min+y_step+step],
-                [x_min+x_step+step, y_min+y_step],
-                [x_min+x_step, y_min+y_step],
+                [lt_x+x_step, lt_y+y_step],
+                [lt_x+x_step, lt_y+y_step+step],
+                [lt_x+x_step+step, lt_y+y_step+step],
+                [lt_x+x_step+step, lt_y+y_step],
+                [lt_x+x_step, lt_y+y_step],
             ]
         ]
     feature = Feature(Geometry(coords), Properties())
     return feature
 
 def main():
-    fc = FeatureCollection()
+    try:
+        fc = FeatureCollection()
+        fc.features= [get_feature(c, r) for r in range(n) for c in range(n)]
 
-    fc.features= [get_feature(i, j) for i in range(c) for j in range(c)]
-
-
-    os.makedirs("data", exist_ok=True)
-    with open("data/features.json", 'w') as f:
-        json.dump(fc.to_dict(), f, indent=4)
+        os.makedirs("data", exist_ok=True)
+        with open("data/features.json", 'w') as f:
+            json.dump(fc.to_dict(), f)
+    except Exception as e:
+        print(e)
 
 if __name__ =='__main__':
     main()

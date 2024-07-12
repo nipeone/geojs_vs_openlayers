@@ -9,6 +9,6 @@ export async function getData() {
             return features
         }
     }catch(error){
-        console.error(err);
+        console.error(error);
     }
 }
