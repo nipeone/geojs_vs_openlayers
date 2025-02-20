@@ -3,7 +3,7 @@ import json
 import math
 from feature import FeatureCollection, Feature, Properties, Geometry
 
-num_features = 360000
+num_features = 90000
 n = int(math.sqrt(num_features))
 lt_x=105. #lt longitude
 lt_y=35. #lt latitude

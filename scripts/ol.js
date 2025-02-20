@@ -58,7 +58,7 @@ var featureLayer = new WebGLLayer({
 // Use the "webgl" renderer by default.
 var map = new Map({
   layers: [
-    osmLayer, 
+    // osmLayer,
     featureLayer
   ],
   target: document.getElementById('map'),

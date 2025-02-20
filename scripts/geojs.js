@@ -8,7 +8,7 @@ var map = geo.map({
     zoom: 9
 });
 
-var osmLayer = map.createLayer('osm');
+// var osmLayer = map.createLayer('osm');
 // only support webgl, if use canvas display nothing.
 var featureLayer = map.createLayer('feature', { renderer: renderer });
 var reader = geo.createFileReader('geojsonReader', { layer: featureLayer });

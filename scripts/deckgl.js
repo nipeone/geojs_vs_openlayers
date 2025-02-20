@@ -51,7 +51,7 @@ const deck = new Deck({
   },
   controller: {scrollZoom: {speed: 0.1, smooth: true}},
   layers: [
-    tileLayer,
+    // tileLayer,
     featureLayer
   ]
 });
