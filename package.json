@@ -1,12 +1,12 @@
 {
     "name": "webgl-vector-layer",
     "dependencies": {
-        "@deck.gl/core": "^9.1.2",
-        "@deck.gl/geo-layers": "^9.1.2",
-        "@deck.gl/layers": "^9.1.2",
-        "geojs": "^1.14.1",
-        "maplibre-gl": "^5.1.0",
-        "ol": "^10.4.0"
+        "@deck.gl/core": "^9.1.12",
+        "@deck.gl/geo-layers": "^9.1.12",
+        "@deck.gl/layers": "^9.1.12",
+        "geojs": "^1.14.5",
+        "maplibre-gl": "^5.5.0",
+        "ol": "^10.5.0"
     },
     "devDependencies": {
         "vite": "^3.2.3"

@@ -9,6 +9,7 @@ import { Style, Stroke, Fill } from 'ol/style.js';
 import Layer from 'ol/layer/Layer.js';
 import TileLayer from 'ol/layer/WebGLTile.js';
 import WebGLVectorLayerRenderer from 'ol/renderer/webgl/VectorLayer.js';
+import WebGLVectorLayer from 'ol/layer/WebGLVector.js';
 import {defaults as defaultControls} from 'ol/control.js';
 
 import { geojsonPath, getData } from './common.js'
@@ -29,14 +30,14 @@ const style = {
   'fill-color': 'rgba(0, 0, 255, 0.1)',
 }
 
-class WebGLLayer extends Layer {
-  createRenderer() {
-    return new WebGLVectorLayerRenderer(this, {
-      className: this.getClassName(),
-      style: style,
-    });
-  }
-}
+// class WebGLLayer extends Layer {
+//   createRenderer() {
+//     return new WebGLVectorLayerRenderer(this, {
+//       className: this.getClassName(),
+//       style: style,
+//     });
+//   }
+// }
 
 var osmLayer = new TileLayer({
   source: new OSM()
@@ -48,11 +49,12 @@ var osmLayer = new TileLayer({
 //   }),
 // });
 
-var featureLayer = new WebGLLayer({
+var featureLayer = new WebGLVectorLayer({
   source: new VectorSource({
     format: new GeoJSON(),
     url: geojsonPath,
   }),
+  style: style,
 });
 
 // Use the "webgl" renderer by default.
